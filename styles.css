@@ -1,4 +1,64 @@
-/* Código anterior */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+#titulo {
+    text-align: center;
+    font-size: 3rem;
+    margin: 40px 0;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+a.play-button {
+    text-decoration: none;
+    background-color: #FF3333;
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 2rem;
+}
+
+#sobre {
+    padding: 40px;
+    text-align: center;
+}
+
+#sobre h2 {
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.container img {
+    width: 100px;
+}
+
+.container iframe {
+    border: none;
+}
 
 #bugs form, #comentarios form {
     display: flex;
@@ -33,7 +93,6 @@ button[type="submit"] {
     cursor: pointer;
 }
 
-/* Novo CSS para a seção de comentários */
 #comentarios {
     padding: 40px;
     text-align: center;
@@ -65,5 +124,3 @@ button[type="submit"] {
     color: #FF3333;
     margin-bottom: 10px;
 }
-
-/* Código anterior */
