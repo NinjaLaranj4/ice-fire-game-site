@@ -1,0 +1,69 @@
+/* Código anterior */
+
+#bugs form, #comentarios form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #FF3333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Novo CSS para a seção de comentários */
+#comentarios {
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 2s;
+}
+
+#comentarios h2 {
+    margin-bottom: 20px;
+    color: #FF3333;
+}
+
+#comentarios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.comentario {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.comentario h3 {
+    color: #FF3333;
+    margin-bottom: 10px;
+}
+
+/* Código anterior */
