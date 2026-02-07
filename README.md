@@ -95,3 +95,22 @@ Se o deploy falhar com mensagem de ação descontinuada, confirme que o workflow
 - `actions/deploy-pages@v4`
 
 Depois faça um novo commit/push e clique em **Re-run jobs** na aba **Actions**.
+
+
+## Se o log ainda mostrar `checkout@v3` / `upload-pages-artifact@v3`
+
+Isso significa que você está olhando uma execução antiga do workflow (run antigo) ou uma branch sem a correção.
+
+Faça assim:
+
+1. Confirme que o commit com a correção está na branch padrão (`main`):
+   - arquivo `.github/workflows/static.yml` com `@v4/@v5`.
+2. Faça **push** da branch corrigida para `main`.
+3. Em **Actions**, abra o run mais recente (não o antigo).
+4. Se necessário, clique em **Run workflow** para disparar manualmente.
+
+Quando estiver certo, o log deve baixar exatamente:
+- `actions/checkout@v4`
+- `actions/configure-pages@v5`
+- `actions/upload-pages-artifact@v4`
+- `actions/deploy-pages@v4`
