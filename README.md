@@ -83,3 +83,15 @@ Isso indica que o servidor foi iniciado em pasta errada.
 
 - Nunca comite sua API key em repositório.
 - Se uma chave for exposta, revogue no painel da OpenAI e gere outra.
+
+
+## Erro no Actions (deprecated `upload-artifact: v3`)
+
+Se o deploy falhar com mensagem de ação descontinuada, confirme que o workflow está usando:
+
+- `actions/checkout@v4`
+- `actions/configure-pages@v5`
+- `actions/upload-pages-artifact@v4`
+- `actions/deploy-pages@v4`
+
+Depois faça um novo commit/push e clique em **Re-run jobs** na aba **Actions**.
