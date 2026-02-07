@@ -1,46 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ice Fire</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ice Fire AI Console</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- Código anterior -->
+    <main class="app-shell">
+        <header class="app-header">
+            <div>
+                <p class="eyebrow">IA Conversacional</p>
+                <h1>Ice Fire • GPT Console</h1>
+                <p class="subtitle">Interface criativa para conversar com a API da OpenAI com histórico local e controles avançados.</p>
+            </div>
+            <button id="clear-history" class="ghost-btn" type="button">Limpar conversa</button>
+        </header>
 
-    <section id="bugs">
-        <h2>Reportar Bugs</h2>
-        <form id="comment-form">
-            <input type="text" placeholder="Seu nome..." id="name" required>
-            <textarea placeholder="Digite seu comentário aqui..." id="comment" rows="5" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-    <section id="comentarios">
-        <h2>Comentários</h2>
-        <div id="comentarios-lista"></div>
-    </section>
+        <section class="panel settings-panel">
+            <h2>Configuração</h2>
+            <div class="grid">
+                <label>
+                    API Key
+                    <input id="api-key" type="password" placeholder="Cole sua chave sk-proj..." autocomplete="off" />
+                </label>
 
-    <!-- Código anterior -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCTsEeoY4sDTOQSmPaTyVIP8HSISic2I50",
-            authDomain: "ice-fire-coments-bugs-report.firebaseapp.com",
-            projectId: "ice-fire-coments-bugs-report",
-            storageBucket: "ice-fire-coments-bugs-report.appspot.com",
-            messagingSenderId: "863645039004",
-            appId: "1:863645039004:web:04e0d65804a936b8eff059",
-        };
+                <label>
+                    Modelo
+                    <select id="model">
+                        <option value="gpt-4.1-mini">gpt-4.1-mini (rápido)</option>
+                        <option value="gpt-4.1">gpt-4.1 (equilibrado)</option>
+                        <option value="gpt-4o">gpt-4o (multimodal)</option>
+                    </select>
+                </label>
 
-        const app = firebase.initializeApp(firebaseConfig);
-        firebase.analytics(app);
-    </script>
+                <label>
+                    Temperatura <span id="temp-value">0.7</span>
+                    <input id="temperature" type="range" min="0" max="2" step="0.1" value="0.7" />
+                </label>
+
+                <label>
+                    Prompt de sistema
+                    <textarea id="system-prompt" rows="3" placeholder="Ex.: Você é um assistente especialista em jogos indie."></textarea>
+                </label>
+            </div>
+            <p class="hint">A chave fica salva apenas no seu navegador (localStorage). Não a publique em repositórios.</p>
+        </section>
+
+        <section class="panel chat-panel">
+            <div id="chat-log" class="chat-log" aria-live="polite"></div>
+
+            <form id="chat-form" class="chat-form">
+                <textarea id="user-input" rows="3" placeholder="Digite sua mensagem..." required></textarea>
+                <div class="actions">
+                    <button id="send-btn" type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
     <script src="scripts.js"></script>
 </body>
 
